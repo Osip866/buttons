@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .classInput {
+        border-radius: 10px;
+        background-color: green;
+        font-size: 120px;
+    }
+</style>
+
+<body>
+    <p style="text-align: center; margin-top: 180px;">
+        <input type="button" value="0" class="classInput" data-counter>
+        <input type="button" value="0" class="classInput" data-counter>
+        <input type="button" value="0" class="classInput" data-counter>
+        <input type="button" value="0" class="classInput" data-counter>
+        <input type="button" value="0" class="classInput" data-counter>
+        <input type="button" value="0" class="classInput" data-counter>
+
+    </p>
+    <script>
+
+        function makeCounter() {
+            let count = 0;
+            return function () {
+                return ++count;
+            };
+        };
+
+        var btn = document.querySelectorAll('input');
+        for (let i = 0; i < btn.length; i++) {
+            let counter = makeCounter();
+            btn[i].onclick = function () {
+                event.target.value = counter();
+            };
+        };
+
+
+
+        // document.addEventListener('click', function (event) {
+
+        //     if (event.target.dataset.counter != undefined) { // если есть атрибут...
+        //         event.target.value++;
+        //         }
+        //     });
+
+    // function summ(){
+    // let i = document.getElementsByTagName(input).value;
+    // i++;
+    // document.getElementById(id).value = i};
+
+   // makeCounter
+    </script>
+</body>
+
+</html>
